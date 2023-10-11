@@ -32,9 +32,9 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         cameraTransform = Camera.main.transform;
-        moveAction = playerInput.actions["Kmove"];
-        lookAction = playerInput.actions["Klook"];
-        jumpAction = playerInput.actions["Kjump"];
+        moveAction = playerInput.actions["Move"];
+        lookAction = playerInput.actions["Look"];
+        jumpAction = playerInput.actions["Jump"];
     }
 
     void Update()
