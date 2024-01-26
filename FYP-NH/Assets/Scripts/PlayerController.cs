@@ -34,16 +34,8 @@ public class PlayerController : MonoBehaviour
     //float stamina = 5f;
     //float maxStamina = 5f;
     
-    public float dashLength = 0.5f;
-    public float dashCooldown = 1f;
-    private float dashCounter;
-    private float dashCoolCounter;
-    private float activeMoveSpeed;
-    public float dashSpeed;
-    
     private void Start()
     {
-        activeMoveSpeed = playerSpeed;
 
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
@@ -79,32 +71,6 @@ public class PlayerController : MonoBehaviour
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
-
-        if(runAction.triggered) {
-            
-        }
-
-        if(dashAction.triggered) {
-            Debug.Log("Dashing lil bro");
-            if(dashCoolCounter <=0 && dashCounter <= 0) {
-                activeMoveSpeed = dashSpeed;
-                dashCounter = dashLength;
-            }
-        }
-
-        if(dashCounter > 0) {
-            dashCounter -= Time.deltaTime;
-
-            if( dashCounter <= 0) {
-                activeMoveSpeed = playerSpeed;
-                dashCoolCounter = dashCooldown;
-            }
-        }
-
-        if(dashCoolCounter > 0) {
-            dashCoolCounter -= Time.deltaTime;
-        }
-
 
         //Player looks to where the camera is directed
         Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
