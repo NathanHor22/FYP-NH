@@ -1,4 +1,4 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,6 @@ public class Objectfader : MonoBehaviour
 {
     public float fadeSpeed, fadeAmount;
     float originalOpacity;
-    Renderer renderer;
     Material Mat;
     //tells the object to either fade or not to fade
     public bool DoFade = false;

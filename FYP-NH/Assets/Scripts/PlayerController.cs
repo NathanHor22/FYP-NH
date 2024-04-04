@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     Vector2 animationVelocity;
     
     
-    private void Awake()
+    private void Start()
     {
 
         controller = GetComponent<CharacterController>();
@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
         jumpAction = playerInput.actions["Jump"];
         //Locks cursor to middle of the screen
         Cursor.lockState = CursorLockMode.Locked;
+        
         //Animations
         animator = GetComponent<Animator>();
         jumpAnimation = Animator.StringToHash("Jumping");
