@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 272e57789dfa59248814e7424ea81fa7
+timeCreated: 1460029734
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 60122
+  packageName: TV Furniture
+  packageVersion: 1.2
+  assetPath: Assets/Tv_furniture/Prefabs/Sun.prefab
+  uploadId: 249461
