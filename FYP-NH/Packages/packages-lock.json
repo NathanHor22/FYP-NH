@@ -1,5 +1,31 @@
 {
   "dependencies": {
+    "com.autodesk.fbx": {
+      "version": "5.0.0",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ai.navigation": {
+      "version": "1.1.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.ai": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.animation.rigging": {
+      "version": "1.2.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.burst": "1.4.1",
+        "com.unity.test-framework": "1.1.24"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.burst": {
       "version": "1.8.8",
       "depth": 1,
@@ -50,6 +76,17 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.feature.characters-animation": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.animation.rigging": "1.2.1",
+        "com.unity.timeline": "1.8.2",
+        "com.unity.cinemachine": "2.9.5",
+        "com.unity.formats.fbx": "5.0.0"
+      }
+    },
     "com.unity.feature.development": {
       "version": "1.0.2",
       "depth": 0,
@@ -72,6 +109,16 @@
         "com.unity.timeline": "1.8.2",
         "com.unity.visualscripting": "1.8.0"
       }
+    },
+    "com.unity.formats.fbx": {
+      "version": "5.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.timeline": "1.7.1",
+        "com.autodesk.fbx": "5.0.0"
+      },
+      "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
       "version": "3.0.24",
