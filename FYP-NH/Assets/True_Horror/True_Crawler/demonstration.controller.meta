@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1d2c71babf018154e88833a6af64adc2
+timeCreated: 1472530838
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 70609
+  packageName: True Horror - Crawler
+  packageVersion: 1.0
+  assetPath: Assets/True_Horror/True_Crawler/demonstration.controller
+  uploadId: 134839
