@@ -42,9 +42,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Dash",
+                    "name": "Use",
                     "type": "Button",
-                    "id": "42812686-7e93-43e7-a706-cebd4cdf75ad",
+                    "id": "1e4df199-5afe-44c3-80e2-ba0ee42df12c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -230,23 +230,23 @@
                 },
                 {
                     "name": "",
-                    "id": "d6a20a6f-d38b-4145-9cb2-3574c44f0a1b",
-                    "path": "<Keyboard>/z",
+                    "id": "115add8c-ceb9-4e1a-b07e-461f95c04c54",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Dash",
+                    "groups": "Controller",
+                    "action": "Use",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "5c54c271-9b07-4782-b3dc-e521bca150d6",
-                    "path": "<Gamepad>/buttonEast",
+                    "id": "879836b5-f753-48d1-9108-e9fa1642ac89",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
-                    "action": "Dash",
+                    "groups": "Keyboard",
+                    "action": "Use",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
