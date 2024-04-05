@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     Vector2 currentAnimationBlendVector;
     Vector2 animationVelocity;
     
-    
+    public AudioSource walkSound;
     private void Start()
     {
 
@@ -94,11 +94,21 @@ public class PlayerController : MonoBehaviour
         //Player looks to where the camera is directed
         Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+        //Audio for footsteps
+            if(moveAction.triggered) {
+                walkSound.enabled = true;
+        } else {
+                walkSound.enabled = false;
+        }
     }
 
     //Concept: player can only sprint for 5 seconds 
     //Counter to count the moment the runaction is triggered
     //Once counter reaches 5, stop the sprint and then have cooldown on the sprint 5 seconds
     // //after 5 seconds can sprint again
+
+
+
 }
 
