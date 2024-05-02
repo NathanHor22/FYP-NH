@@ -15,8 +15,8 @@ public class Insect : MonoBehaviour
         }
         else 
         {
-            animator.SetTrigger("getHit");
             //Get hit animation is played here
+            animator.SetTrigger("getHit");
         }
     }
 }

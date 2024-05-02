@@ -47,6 +47,8 @@ public class PlayerController : MonoBehaviour
     Vector2 animationVelocity;
     
     public AudioSource walkSound;
+
+    public AudioSource attackSound;
     private void Awake()
     {
 
@@ -111,13 +113,18 @@ public class PlayerController : MonoBehaviour
             if(moveAction.triggered) {
                 walkSound.enabled = true;
         } else {
-                walkSound.enabled = false;
+            walkSound.enabled = false;
         }
 
         if(AttackAction.triggered) 
         {
             Debug.Log("Attacking");
             animator.CrossFade(attackAnimation, animationPlayTransition);
+            attackSound.enabled = true;
+        }
+        else
+        {
+            attackSound.enabled = false;    
         }
     }
 
