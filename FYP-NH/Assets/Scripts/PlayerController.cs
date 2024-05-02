@@ -6,7 +6,6 @@ using System.Collections.Generic;
 [RequireComponent(typeof(CharacterController),typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
 {
-
     [SerializeField]
     private float playerSpeed = 2.0f;
     [SerializeField]
@@ -14,24 +13,33 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float gravityValue = -9.81f;
     [SerializeField]
-    private float rotationSpeed = 0.8f;
+    private float rotationSpeed = 5f;
+
+    [SerializeField]
+    public float playerHealth = 100f;
+
+    [SerializeField]
     private float animationSmoothTime = 0.1f;
+    [SerializeField]
     private float animationPlayTransition = 0.15f;
 
-    //References to playerInput component
-    private PlayerInput playerInput;
+    //Initializes basic character physics
     private CharacterController controller;
+    private PlayerInput playerInput;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     private Transform cameraTransform;
 
-    //basic player movement references
+    //player moveset
     private InputAction moveAction;
-    private InputAction lookAction;
     private InputAction jumpAction;
+    private InputAction AttackAction;
 
+    //player animations
     private Animator animator;
     int jumpAnimation;
+
+    int attackAnimation;
     int moveXAnimationParameterId;
     int moveZAnimationParameterId;
 
@@ -39,24 +47,28 @@ public class PlayerController : MonoBehaviour
     Vector2 animationVelocity;
     
     public AudioSource walkSound;
-    private void Start()
+    private void Awake()
     {
 
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         cameraTransform = Camera.main.transform;
+        //makes it easier to call all the input functions instead of typing it out every single time
         moveAction = playerInput.actions["Move"];
-        lookAction = playerInput.actions["Look"];
         jumpAction = playerInput.actions["Jump"];
-        //Locks cursor to middle of the screen
+        AttackAction = playerInput.actions["Attack"];
+        //locks the cursor and disappear when it goes to game mode
         Cursor.lockState = CursorLockMode.Locked;
         
         //Animations
         animator = GetComponent<Animator>();
         jumpAnimation = Animator.StringToHash("Jumping");
+        attackAnimation = Animator.StringToHash("Attack");
         moveXAnimationParameterId = Animator.StringToHash("MoveX");
         moveZAnimationParameterId = Animator.StringToHash("MoveZ");
     }
+
+
 
     void Update()
     {
@@ -100,6 +112,12 @@ public class PlayerController : MonoBehaviour
                 walkSound.enabled = true;
         } else {
                 walkSound.enabled = false;
+        }
+
+        if(AttackAction.triggered) 
+        {
+            Debug.Log("Attacking");
+            animator.CrossFade(attackAnimation, animationPlayTransition);
         }
     }
 
