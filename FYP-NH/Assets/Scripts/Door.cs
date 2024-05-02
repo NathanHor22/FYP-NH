@@ -28,6 +28,7 @@ public class Door : MonoBehaviour
 
     public void Open(Vector3 UserPosition) 
     {
+        //If the door is open then it will not rotate, if the door is not open the door will start the rotate coroutine
         if (!IsOpen) 
         {
             if(AnimationCoroutine != null)

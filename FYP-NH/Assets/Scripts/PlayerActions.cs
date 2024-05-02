@@ -16,6 +16,8 @@ public class PlayerAction : MonoBehaviour
     private LayerMask UseLayers;
     
     public AudioSource doorSound;
+    // it uses raycast to allow the player to open the door
+    // there also audio whic accompanies the door being opened or closed 
     public void OnUse() {
         if(Physics.Raycast(Camera.position, Camera.forward, out RaycastHit hit, MaxUseDistance, UseLayers))
         {
